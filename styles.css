@@ -1,0 +1,612 @@
+:root {
+  --mbawula-yellow: #F7B90E;
+  --mbawula-white: #FDFCF9;
+  --mbawula-dark-yellow: #e2a709;
+  --mbawula-grey: #9D9D9C;
+  --mbawula-orange: #D77806;
+  --mbawula-black: black;
+}
+
+/* =======================
+        FONTS
+======================== */
+
+@font-face {
+  font-family: 'Montserrat Semi-Bold';
+  src: url(/Assets/Fonts/Montserrat-SemiBold.otf)
+  format(opentype);
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url(/Assets/Fonts/Montserrat-Regular.ttf)
+  format(truetype);
+}
+
+@font-face {
+  font-family: 'Mistral';
+  src: url(/Assets/Fonts/MISTRAL.TTF)
+  format(truetype);
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--mbawula-yellow);
+  color: var(--mbawula-black);
+}
+
+
+/* ===========================
+        ERROR PAGE
+=========================== */
+
+.error-page {
+  height: 100vh;
+  background: linear-gradient(to bottom right, #000000, #311a00);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.error-container {
+  z-index: 10;
+}
+
+.error-container h1 {
+  font-size: 8rem;
+  margin: 0;
+  color: var(--mbawula-orange);
+}
+
+.error-container h2 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+.error-container p {
+  font-size: 1.1rem;
+  margin: 20px 0;
+}
+
+.error-container .btn {
+  padding: 10px 25px;
+  background-color: red;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+}
+
+.error-container .btn:hover {
+  background-color: var(--mbawula-dark-yellow);
+}
+
+/* Optional: Add a faint film reel */
+.error-page::after {
+  content: '';
+  background: url('images/film-reel.png') no-repeat center center;
+  background-size: 300px;
+  opacity: 0.03;
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  width: 300px;
+  height: 300px;
+  pointer-events: none;
+}
+
+
+
+
+
+
+/* ===========================
+        NAVIGATION STYLES
+=========================== */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+header.scrolled {
+  background-color: var(--mbawula-black);
+}
+
+header.scrolled .nav-links a,
+header.scrolled .mobile-menu a {
+  color: var(--mbawula-white);
+}
+
+header.scrolled .nav-links a:hover,
+header.scrolled .mobile-menu a:hover {
+  color: var(--mbawula-yellow);
+}
+
+header.scrolled .hamburger span {
+  background-color: var(--mbawula-white);
+}
+
+.navbar-logo {
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+/* When scrolled */
+.navbar.scrolled .navbar-logo {
+  opacity: 1;
+}
+
+
+/* LOGO */
+.logo {
+  opacity: 0;
+  height: 50px;
+  width: auto;
+  transition: opacity 0.3s ease;
+}
+
+.logo-color {
+  opacity: 0;
+}
+.logo-bw {
+  opacity: 0;
+  position: absolute;
+  left: 2rem; /* Match your navbar padding */
+}
+
+/* Scrolled state - B&W logo visible */
+header.scrolled .logo-color {
+  opacity: 0;
+}
+header.scrolled .logo-bw {
+  opacity: 1;
+}
+
+/* DESKTOP NAV */
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+.nav-links a {
+  color: var(--mbawula-black);
+  text-decoration: none;
+  font-weight: 300;
+  transition: color 0.3s;
+}
+.nav-links a:hover {
+  color: var(--mbawula-white);
+  font-weight: 600;
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--mbawula-black);
+  transition: all 0.3s ease;
+}
+
+/* MOBILE MENU */
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  background-color: var(--mbawula-black);
+  flex-direction: column;
+  text-align: center;
+}
+
+.mobile-menu.active {
+  display: flex;
+}
+
+.mobile-menu ul {
+  list-style: none;
+}
+
+.mobile-menu a {
+  color: var(--mbawula-white);
+  text-decoration: none;
+  display: block;
+  padding: 1.25rem 1rem; /* More vertical spacing */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.mobile-menu a:hover {
+  background-color: var(--mbawula-dark-yellow);
+  color: var(--mbawula-black);
+}
+
+/* ===========================
+        HERO SECTION
+=========================== */
+.hero {
+  height: 100vh;
+  background: url('Assets/Background/MBAWULA 2024 - No Smoke (Landscape).jpg') center center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  margin-top: 80px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, var(--mbawula-yellow) 100%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.hero-logo {
+  max-width: 60%;
+  height: auto;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 10;
+}
+
+.hero-content h1 {
+  font-family: 'Mistral', sans-serif;
+  font-size: 2.8rem;
+  color: var(--mbawula-white);
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-family: 'Montserrat Semi-Bold', sans-serif;
+  font-size: 1.1rem;
+  color: var(--mbawula-black);
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+/* 📱 Mobile View */
+@media screen and (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .hero-logo {
+    max-width: 70%;
+  }
+}
+
+/* 💻 Desktop View */
+@media screen and (min-width: 1024px) {
+  .hero-logo {
+    max-width: 25%; /* Adjust this based on your preference */
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.25rem;
+  }
+}
+.cta-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--mbawula-black);
+  color: white;
+  border: none;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+.cta-btn:hover {
+  background-color: var(--mbawula-white);
+  color: var(--mbawula-yellow);
+}
+
+
+/* =================
+    ABOUT SECTION 
+================== */
+
+
+.about-section {
+  padding: 4rem 2rem;
+  background-color: var(--mbawula-white);
+  color: var(--mbawula-black);
+  text-align: left;
+}
+
+.about-section h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--mbawula-yellow);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-section p {
+  text-align: left;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* FLOATING DATE BOX */
+.floating-date-box {
+  position: fixed;
+  bottom: 3vh;
+  right: 2vw;
+  background-color: var(--mbawula-dark-yellow);
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  width: clamp(140px, 0vw, 140px); /* scales from 140px to 200px */
+  text-align: center;
+  color: var(--mbawula-white);
+  transition: transform 0.3s ease-in-out;
+}
+
+.floating-date-box .date-img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.floating-date-box .countdown {
+  font-size: clamp(0.6rem, 0vw + 0rem, 1rem); /* responsive font size */
+  font-weight: bold;
+}
+
+
+/* ====================
+      FILM REEL
+===================== */
+
+/* Film Reel Styles */
+.film-reel-container {
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--mbawula-black);
+  padding: 1rem 0;
+  position: relative;
+}
+
+.film-reel {
+  display: flex;
+  width: 200%; /* Double width for seamless looping */
+  animation: scrollReel 30s linear infinite;
+}
+
+.film-reel img {
+  height: 150px; /* Adjust based on your image */
+  width: auto;
+  object-fit: contain;
+  opacity: 0.8;
+}
+
+/* Animation */
+@keyframes scrollReel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Move left by half width */
+  }
+}
+
+/* ===========================
+        FILMS SECTION
+=========================== */
+
+/* Film Hero Section */
+.film-hero {
+  background: var(--mbawula-yellow);
+  color: #fff;
+  padding: 5rem 2rem 3rem;
+  text-align: center;
+}
+
+.film-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.film-hero p {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+/* Countdown Box (reuse and scale on screen size) */
+.countdown-box {
+ position: fixed;
+  bottom: 3vh;
+  right: 2vw;
+  background-color: var(--mbawula-dark-yellow);
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  width: clamp(140px, 0vw, 140px); /* scales from 140px to 200px */
+  text-align: center;
+  color: var(--mbawula-white);
+  transition: transform 0.3s ease-in-out;
+}
+
+.countdown-date {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  font-size: small;
+}
+
+/* Film Grid Section */
+.film-gallery {
+  padding: 4rem 2rem;
+  background: #f4f4f4;
+  text-align: center;
+}
+
+.film-gallery h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.film-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.film-card {
+  background: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.film-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.film-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.film-card h3 {
+  margin: 0.5rem 0;
+  font-size: 1.25rem;
+}
+
+.film-card p {
+  padding: 0 1rem 1rem;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* Footer */
+.footer {
+  background-color: #111;
+  color: #ccc;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+/* ===========================
+        FOOTER SECTION
+=========================== */
+.footer {
+  background-color: var(--mbawula-black);
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-logo {
+  max-width: 120px;
+  margin-bottom: 1rem;
+}
+
+
+.footer-left p {
+  margin: 0;
+  padding: 1rem;
+}
+
+.footer-right a {
+  color: var(--mbawula-white);
+  text-decoration: none;
+  margin-left: 1rem;
+  transition: color 0.3s ease;
+}
+.footer-right a:first-child {
+  margin-left: 0;
+}
+.footer-right a:hover {
+  color: var(--mbawula-yellow);
+}
+
+/* RESPONSIVE FOOTER */
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-right a {
+    margin: 0.5rem 0;
+  }
+}
+
+/* RESPONSIVE NAVIGATION */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobile-menu {
+    width: 100%;
+  }
+}
