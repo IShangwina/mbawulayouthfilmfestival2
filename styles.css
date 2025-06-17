@@ -308,10 +308,12 @@ header.scrolled .logo-bw {
 /* 📱 Mobile View */
 @media screen and (max-width: 768px) {
   .hero-content h1 {
+    font-family: 'Mistral', sans-serif;
     font-size: 1.6rem;
   }
 
   .hero-content p {
+    font-family: 'Montserrat Semi-Bold', sans-serif;
     font-size: 1rem;
   }
 
