@@ -251,7 +251,7 @@ header.scrolled .logo-bw {
 =========================== */
 .hero {
   height: 100vh;
-  background: url('Assets/Background/MBAWULA 2024 - No Smoke (Landscape).jpg') center center/cover no-repeat;
+  background: url('/Assets/IMAGES/Background/MBAWULA\ 2024\ -\ No\ Smoke\ \(Landscape\).jpg') center center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
