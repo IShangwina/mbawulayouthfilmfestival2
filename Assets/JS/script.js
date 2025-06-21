@@ -75,6 +75,46 @@ const heroLogo = document.querySelector('.hero-logo');
     }
   });
 
+  /* ===========
+      TRACKER
+  ============= */
+const timelineItems = document.querySelectorAll('.timeline-item');
+    const cards = document.querySelectorAll('.program-card');
+
+    window.addEventListener('scroll', () => {
+      cards.forEach((card, index) => {
+        const rect = card.getBoundingClientRect();
+        if (rect.top < window.innerHeight / 2) {
+          timelineItems[index].classList.add('active');
+        }
+      });
+    });
+
+
+/* =============
+  PROGRAM CARD
+============= */
+
+
+  function toggleDetails(event, content) {
+    event.stopPropagation();
+    const modal = document.getElementById("programModal");
+    const modalBody = document.getElementById("modalBody");
+
+    modalBody.innerHTML = content;
+    modal.style.display = "flex";
+  }
+
+  function closeModal() {
+    document.getElementById("programModal").style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    const modal = document.getElementById("programModal");
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  }
 
 
 
