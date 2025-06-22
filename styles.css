@@ -692,171 +692,145 @@ header.scrolled .logo-bw {
   font-weight: bold;
 }
 
-/* ===========================
-        PROGRAM SECTION
-=========================== */
- .program-section {
-      display: flex;
-      flex-direction: row;
-      gap: 2rem;
-      padding: 4rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+/* ==========================
+   PROGRAM SECTION STYLING
+========================== */
 
-    .timeline {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .timeline-item {
-      height: 120px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .dot {
-      width: 20px;
-      height: 20px;
-      background-color: grey;
-      border-radius: 50%;
-      z-index: 2;
-      transition: background-color 0.3s ease;
-    }
-
-    .timeline-item.active .dot {
-      background-color: #D77806; /* mbawula-orange */
-    }
-
-    .line {
-      width: 4px;
-      height: 100%;
-      background-color: #D77806;
-      margin-top: -1px;
-    }
-
-    .line.last {
-      height: 60px;
-    }
-
-    .program-cards {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      max-width: 700px;
-    }
-
-    .program-card {
-      background-color: white;
-      padding: 1.5rem;
-      border-left: 5px solid #D77806;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    .program-card h3 {
-      margin-bottom: 0.5rem;
-      color: black;
-    }
-
-    .program-card p {
-      color: #555;
-    }
-
-    .card-details {
-  display: none;
-  margin-top: 1rem;
-  transition: all 0.3s ease;
+.program-section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.program-card.active .card-details {
-  display: block;
+.program-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--mbawula-black);
 }
 
-
-    @media screen and (max-width: 768px) {
-      .program-section {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .timeline {
-        flex-direction: row;
-        justify-content: center;
-        gap: 1.5rem;
-        margin-bottom: 2rem;
-      }
-
-      .timeline-item {
-        height: auto;
-      }
-
-      .line {
-        display: none;
-      }
-    }
-
-/* Spacing between cards */
+/* Program Grid */
 .program-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
-  padding: 2rem;
-  max-width: 1000px;
+  max-width: 800px;
   margin: auto;
 }
 
-/* Card Styles */
 .program-card {
   background: var(--mbawula-white);
   border-radius: 1rem;
   padding: 1.5rem;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  position: relative;
+  transition: transform 0.3s ease, outline 0.3s ease;
 }
 
 .program-card:hover {
   outline: 2px solid var(--mbawula-yellow);
+  transform: scale(1.01);
 }
 
-/* Modal Backdrop */
-.modal-backdrop {
+.card-summary h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  color: #111;
+}
+
+.card-summary p {
+  color: #444;
+}
+
+/* Modal Styling */
+.modal {
   display: none;
   position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  background-color: rgba(0,0,0,0.7);
-  z-index: 999;
-  align-items: center;
+  inset: 0;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.7);
   justify-content: center;
+  align-items: center;
+  padding: 1rem;
 }
 
-/* Modal Content */
 .modal-content {
-  background: var(--mbawula-white);
+  background: #fff;
   border-radius: 1rem;
   padding: 2rem;
-  width: 90%;
-  max-width: 700px;
+  max-width: 600px;
+  width: 100%;
   max-height: 80vh;
   overflow-y: auto;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
   position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Close button inside modal */
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  max-width: 600px;
+  max-height: 80vh;
+  width: 100%;
+  overflow-y: auto;
+  position: relative;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 .modal-close {
   position: absolute;
   top: 1rem;
-  right: 1.5rem;
-  font-size: 1.5rem;
+  right: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
   color: #333;
   cursor: pointer;
-  font-weight: bold;
 }
+
+/* Modal Scrollbar */
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .program-grid {
+    padding: 1rem;
+  }
+
+  .modal-content {
+    max-width: 90%;
+    max-height: 85vh;
+  }
+}
+
 
 
 /* ===========================

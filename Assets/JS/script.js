@@ -91,32 +91,44 @@ const timelineItems = document.querySelectorAll('.timeline-item');
     });
 
 
-/* =============
-  PROGRAM CARD
-============= */
 
 
-  function toggleDetails(event, content) {
-    event.stopPropagation();
-    const modal = document.getElementById("programModal");
-    const modalBody = document.getElementById("modalBody");
 
-    modalBody.innerHTML = content;
-    modal.style.display = "flex";
+
+// Open modal with dynamic content
+function toggleDetails(event, content) {
+  event.stopPropagation();
+  const modal = document.getElementById("programModal");
+  const modalBody = document.getElementById("modalBody");
+
+  modalBody.innerHTML = `
+    <span class="modal-close" onclick="closeModal()">×</span>
+    ${content}
+  `;
+  modal.style.display = "flex";
+}
+
+// Close modal
+function closeModal() {
+  const modal = document.getElementById("programModal");
+  if (modal) modal.style.display = "none";
+}
+
+// Close modal when clicking outside the modal-content
+document.addEventListener("click", function (e) {
+  const modal = document.getElementById("programModal");
+  const content = document.querySelector(".modal-content");
+
+  // Only close if modal is open AND click is outside the modal-content
+  if (modal && modal.style.display === "flex" && !content.contains(e.target)) {
+    closeModal();
   }
+});
 
-  function closeModal() {
-    document.getElementById("programModal").style.display = "none";
+// Close modal with ESC key
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") {
+    closeModal();
   }
-
-  window.onclick = function(event) {
-    const modal = document.getElementById("programModal");
-    if (event.target === modal) {
-      modal.style.display = "none";
-    }
-  }
-
-
-
-
+});
 
