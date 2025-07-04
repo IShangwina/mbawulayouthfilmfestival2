@@ -10,22 +10,17 @@
 /* =======================
         FONTS
 ======================== */
-
 @font-face {
   font-family: 'Montserrat Semi-Bold';
-  src: url(/Assets/Fonts/Montserrat-SemiBold.otf)
-  format(opentype);
+  src: url(/Assets/Fonts/Montserrat-SemiBold.otf) format(opentype);
 }
 @font-face {
   font-family: 'Montserrat';
-  src: url(/Assets/Fonts/Montserrat-Regular.ttf)
-  format(truetype);
+  src: url(/Assets/Fonts/Montserrat-Regular.ttf) format(truetype);
 }
-
 @font-face {
   font-family: 'Mistral';
-  src: url(/Assets/Fonts/MISTRAL.TTF)
-  format(truetype);
+  src: url(/Assets/Fonts/MISTRAL.woff2) format(webopenfontformat2);
 }
 
 /* RESET */
@@ -42,16 +37,13 @@ body {
   color: var(--mbawula-black);
 }
 
-
 /* ===========================
         ERROR PAGE
 =========================== */
-
 .error-page {
   height: 100vh;
   background: linear-gradient(to bottom right, #000000, #311a00);
   color: #fff;
-  font-family: 'Montserrat', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,23 +55,19 @@ body {
 .error-container {
   z-index: 10;
 }
-
 .error-container h1 {
   font-size: 8rem;
   margin: 0;
   color: var(--mbawula-orange);
 }
-
 .error-container h2 {
   font-size: 2rem;
   margin: 10px 0;
 }
-
 .error-container p {
   font-size: 1.1rem;
   margin: 20px 0;
 }
-
 .error-container .btn {
   padding: 10px 25px;
   background-color: red;
@@ -88,12 +76,9 @@ body {
   border-radius: 25px;
   transition: background-color 0.3s ease;
 }
-
 .error-container .btn:hover {
   background-color: var(--mbawula-dark-yellow);
 }
-
-/* Optional: Add a faint film reel */
 .error-page::after {
   content: '';
   background: url('images/film-reel.png') no-repeat center center;
@@ -107,87 +92,31 @@ body {
   pointer-events: none;
 }
 
-
-
-
-
-
 /* ===========================
         NAVIGATION STYLES
 =========================== */
-header {
+
+#navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 1rem 2rem;
+  padding: 1.5rem 2rem;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: transparent;
-  transition: all 0.3s ease-in-out;
-  z-index: 1000;
+  transition: background-color 0.3s ease, padding 0.3s ease;
+  background-color: transparent; /* Important */
 }
 
-header.scrolled {
-  background-color: var(--mbawula-black);
-}
-
-header.scrolled .nav-links a,
-header.scrolled .mobile-menu a {
-  color: var(--mbawula-white);
-}
-
-header.scrolled .nav-links a:hover,
-header.scrolled .mobile-menu a:hover {
-  color: var(--mbawula-yellow);
-}
-
-header.scrolled .hamburger span {
-  background-color: var(--mbawula-white);
-}
-
-.navbar-logo {
-  opacity: 0;
-  transition: opacity 0.4s ease-in-out;
-}
 
 /* When scrolled */
-.navbar.scrolled .navbar-logo {
-  opacity: 1;
+#navbar.scrolled {
+  background-color: var(--mbawula-black);
+  padding: 1rem 2rem;
 }
 
-
-/* LOGO */
-.logo {
-  opacity: 0;
-  height: 50px;
-  width: auto;
-  transition: opacity 0.3s ease;
-}
-
-.logo-color {
-  opacity: 0;
-}
-.logo-bw {
-  opacity: 0;
-  position: absolute;
-  left: 2rem; /* Match your navbar padding */
-}
-
-/* Scrolled state - B&W logo visible */
-header.scrolled .logo-color {
-  opacity: 0;
-}
-header.scrolled .logo-bw {
-  opacity: 1;
-}
-
-/* DESKTOP NAV */
-.nav-links ul {
-  display: flex;
-  list-style: none;
-  gap: 1.5rem;
-}
+/* Nav links default (light text over transparent background) */
 .nav-links a {
   color: var(--mbawula-black);
   text-decoration: none;
@@ -195,17 +124,19 @@ header.scrolled .logo-bw {
   transition: color 0.3s;
 }
 .nav-links a:hover {
-  color: var(--mbawula-white);
+  color: var(--mbawula-orange);
   font-weight: 600;
 }
 
-/* HAMBURGER */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
+/* Nav links when scrolled */
+#navbar.scrolled .nav-links a {
+  color: var(--mbawula-white);
 }
+#navbar.scrolled .nav-links a:hover {
+  color: var(--mbawula-yellow);
+}
+
+/* Hamburger lines default */
 .hamburger span {
   width: 25px;
   height: 3px;
@@ -213,7 +144,27 @@ header.scrolled .logo-bw {
   transition: all 0.3s ease;
 }
 
-/* MOBILE MENU */
+/* Hamburger lines when scrolled */
+#navbar.scrolled .hamburger span {
+  background-color: var(--mbawula-white);
+}
+
+/* Hamburger Button */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+/* Desktop Nav Layout */
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+/* Mobile Menu */
 .mobile-menu {
   display: none;
   position: absolute;
@@ -224,26 +175,59 @@ header.scrolled .logo-bw {
   flex-direction: column;
   text-align: center;
 }
-
 .mobile-menu.active {
   display: flex;
 }
-
 .mobile-menu ul {
   list-style: none;
 }
-
 .mobile-menu a {
   color: var(--mbawula-white);
   text-decoration: none;
   display: block;
-  padding: 1.25rem 1rem; /* More vertical spacing */
+  padding: 1.25rem 1rem;
   transition: background-color 0.3s, color 0.3s;
 }
-
 .mobile-menu a:hover {
   background-color: var(--mbawula-dark-yellow);
   color: var(--mbawula-black);
+}
+
+/* Logo Visibility */
+.logo {
+  opacity: 1;
+  height: 50px;
+  width: auto;
+  transition: opacity 0.3s ease;
+}
+.logo-color {
+  opacity: 1;
+}
+.logo-bw {
+  opacity: 0;
+  position: absolute;
+  left: 2rem;
+}
+
+/* When scrolled, switch logos */
+#navbar.scrolled .logo-color {
+  opacity: 0;
+}
+#navbar.scrolled .logo-bw {
+  opacity: 1;
+}
+
+/* RESPONSIVE NAVIGATION */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .mobile-menu {
+    width: 100%;
+  }
 }
 
 /* ===========================
@@ -261,7 +245,6 @@ header.scrolled .logo-bw {
   overflow: hidden;
   text-align: center;
 }
-
 .hero::after {
   content: "";
   position: absolute;
@@ -272,7 +255,6 @@ header.scrolled .logo-bw {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, var(--mbawula-yellow) 100%);
   z-index: 1;
 }
-
 .hero-content {
   position: relative;
   z-index: 2;
@@ -281,7 +263,6 @@ header.scrolled .logo-bw {
   align-items: center;
   padding: 2rem;
 }
-
 .hero-logo {
   max-width: 60%;
   height: auto;
@@ -289,14 +270,12 @@ header.scrolled .logo-bw {
   transition: transform 0.3s ease, opacity 0.3s ease;
   z-index: 10;
 }
-
 .hero-content h1 {
   font-family: 'Mistral', sans-serif;
   font-size: 2.8rem;
   color: var(--mbawula-white);
   margin-bottom: 1rem;
 }
-
 .hero-content p {
   font-family: 'Montserrat Semi-Bold', sans-serif;
   font-size: 1.1rem;
@@ -304,32 +283,24 @@ header.scrolled .logo-bw {
   max-width: 600px;
   margin: 0 auto 2rem;
 }
-
-/* 📱 Mobile View */
 @media screen and (max-width: 768px) {
   .hero-content h1 {
     font-size: 1.6rem;
   }
-
   .hero-content p {
     font-size: 1rem;
   }
-
   .hero-logo {
     max-width: 70%;
   }
 }
-
-/* 💻 Desktop View */
 @media screen and (min-width: 1024px) {
   .hero-logo {
-    max-width: 25%; /* Adjust this based on your preference */
+    max-width: 25%;
   }
-
   .hero-content h1 {
     font-size: 2.5rem;
   }
-
   .hero-content p {
     font-size: 1.25rem;
   }
@@ -348,6 +319,8 @@ header.scrolled .logo-bw {
   background-color: var(--mbawula-white);
   color: var(--mbawula-yellow);
 }
+
+/* (The rest of your CSS stays exactly as is) */
 
 
 /* =================
@@ -444,6 +417,67 @@ header.scrolled .logo-bw {
         FILMS SECTION
 =========================== */
 
+/* Container styling */
+.filter-container {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+/* Label styling */
+.filter-container label {
+  font-weight: bold;
+  margin-right: 0.5rem;
+  color: var(--mbawula-black);
+  font-size: 1.1rem;
+}
+
+/* Dropdown styling */
+.filter-container select {
+  padding: 0.65rem 2.2rem 0.65rem 1rem; /* Extra right padding for the arrow */
+  font-size: 1rem;
+  border: 2px solid var(--mbawula-black);
+  border-radius: 8px; /* More rounded corners */
+  background-color: var(--mbawula-white);
+  color: var(--mbawula-black);
+  cursor: pointer;
+  appearance: none; /* Remove default arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23000000' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center; /* Bring arrow nearer */
+  background-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Hover and focus state */
+.filter-container select:hover,
+.filter-container select:focus {
+  border-color: var(--mbawula-yellow);
+  box-shadow: 0 0 0 3px rgba(247,185,14,0.3);
+  outline: none;
+}
+
+/* Option styling */
+.filter-container select option {
+  background-color: var(--mbawula-white);
+  color: var(--mbawula-black);
+}
+
+/* Selected option styling */
+.filter-container select option:checked {
+  background-color: var(--mbawula-yellow);
+  color: var(--mbawula-black);
+}
+
+/* Option hover styling */
+.filter-container select option:hover {
+  background-color: var(--mbawula-orange);
+  color: var(--mbawula-white);
+}
+
+
+
 /* Film Hero Section */
 .film-hero {
   background: var(--mbawula-yellow);
@@ -465,6 +499,7 @@ header.scrolled .logo-bw {
 
 
 /* Film Grid Section */
+/* Film Grid Section */
 .film-gallery {
   padding: 4rem 2rem;
   background: #f4f4f4;
@@ -478,7 +513,7 @@ header.scrolled .logo-bw {
 
 .film-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -507,6 +542,7 @@ header.scrolled .logo-bw {
 .film-card h3 {
   margin: 0.5rem 0;
   font-size: 1.25rem;
+  padding: 0 0.5rem;
 }
 
 .film-card p {
@@ -515,11 +551,11 @@ header.scrolled .logo-bw {
   font-size: 0.95rem;
 }
 
-/* Force 4 cards per row on mobile view */
+/* Mobile adjustments: 3 cards per row */
 @media (max-width: 768px) {
   .film-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem; /* Increased spacing between cards */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
     padding: 0 0.75rem;
   }
 
@@ -529,12 +565,13 @@ header.scrolled .logo-bw {
   }
 
   .film-card h3 {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
+    word-wrap: break-word;
   }
 
   .film-card p {
-    font-size: 0.6rem;
-    padding: 0 0.5rem 0.5rem;
+    font-size: 0.75rem;
+    padding: 0 0.5rem 0.75rem;
   }
 
   .film-card img {
@@ -542,6 +579,7 @@ header.scrolled .logo-bw {
     object-fit: cover;
   }
 }
+
 
 
 /* Countdown Box (reuse and scale on screen size) */
@@ -831,6 +869,196 @@ header.scrolled .logo-bw {
   }
 }
 
+.modal-content h2,
+.modal-content h3 {
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.modal-content p {
+  margin-bottom: -0.4rem;
+  line-height: 1.5;
+}
+
+/* You can also adjust iframe spacing if you like */
+.modal-content iframe {
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+}
+
+
+/* ======================
+    CONTACT PAGE STYLES 
+======================= */
+
+/* Header styling */
+.contact-header {
+  text-align: center;
+  padding: 4rem 1rem 2rem;
+  background-color: var(--mbawula-yellow);
+  color: var(--mbawula-black);
+}
+
+.contact-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact-header p {
+  font-size: 1.2rem;
+}
+
+/* Main container */
+.contact-container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--mbawula-white);
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+/* Form styling */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--mbawula-black);
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--mbawula-yellow);
+  box-shadow: 0 0 0 3px rgba(244,197,66,0.3);
+  outline: none;
+}
+
+/* Submit button */
+.submit-btn {
+  background-color: var(--mbawula-black);
+  color: var(--mbawula-white);
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.submit-btn:hover {
+  background-color: var(--mbawula-yellow);
+  color: var(--mbawula-black);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+}
+
+/* ====================
+    ABOUT PAGE STYLES
+==================== */
+
+/* Main container */
+.about-container {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background-color: var(--mbawula-white);
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+/* Content styling */
+.about-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--mbawula-black);
+  text-align: center;
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--mbawula-black);
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+  .about-content h1 {
+    font-size: 2rem;
+  }
+}
+/* ==================
+    SUBS CLOSED
+================== */
+.submissions-closed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  min-height: 80vh;
+  background-color: var(--mbawula-white);
+  color: var(--mbawula-black);
+}
+
+.submissions-closed h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.submissions-closed p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+
+.submissions-closed .cta-btn {
+  background-color: var(--mbawula-black);
+  color: var(--mbawula-white);
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.submissions-closed .cta-btn:hover {
+  background-color: var(--mbawula-yellow);
+  color: var(--mbawula-black);
+  transform: translateY(-2px);
+}
 
 
 /* ===========================
@@ -899,3 +1127,4 @@ header.scrolled .logo-bw {
     width: 100%;
   }
 }
+ 

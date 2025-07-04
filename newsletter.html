@@ -2,37 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mbawula | Newsletter</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  <!-- ====================
-       NAVIGATION BAR
-  ===================== -->
-  <header id="navbar">
+ <header id="navbar" class="scrolled">
     <div class="nav-left">
       <img src="Assets/IMAGES/MBAWULA LOGO BW.png" alt="Mbawula Logo" class="logo logo-bw">
     </div>
-
     <nav class="nav-links">
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="index.html#about">About</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="films.html">Films</a></li>
         <li><a href="newsletter.html">News</a></li>
         <li><a href="404.html">Contact</a></li>
       </ul>
     </nav>
-
     <div class="hamburger" id="hamburger">
       <span></span><span></span><span></span>
     </div>
-
     <nav class="mobile-menu" id="mobileMenu">
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="index.html#about">About</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="films.html">Films</a></li>
         <li><a href="newsletter.html">News</a></li>
         <li><a href="404.html">Contact</a></li>
@@ -40,9 +34,6 @@
     </nav>
   </header>
 
-  <!-- ====================
-       MAIN CONTENT
-  ===================== -->
   <main class="newsletter-page">
     <section class="newsletter-intro">
       <h1>Mbawula Newsletter</h1>
@@ -50,7 +41,6 @@
     </section>
 
     <section class="news-list">
-      <!-- Single News Card -->
       <article class="news-card">
         <h2>Youth Filmmakers Take the Spotlight</h2>
         <p><strong>Date:</strong> 18 June 2025</p>
@@ -58,13 +48,28 @@
         <a href="Pages/news/2025-06-18.html" class="read-more">Read More</a>
       </article>
 
-      <!-- More cards can go here -->
+      <article class="news-card">
+        <h2>Celebrating Our Youth Filmmakers</h2>
+        <p><strong>Date:</strong> 30 June 2025</p>
+        <p>As we prepare to ignite the flame of storytelling at the Mbawula Youth Festival from 6th to 9th August 2025...</p>
+        <a href="Pages/news/2025-06-30.html" class="read-more">Read More</a>
+      </article>
     </section>
   </main>
 
-  <footer>
-    <!-- Your footer content -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <p>&copy; 2025 Mbawula Youth Film Festival</p>
+      </div>
+      <div class="footer-right">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="mailto:tdtlnhalogang@gmail.com">Contact Us</a>
+      </div>
+    </div>
   </footer>
+
   <script src="Assets/JS/script.js"></script>
 </body>
 </html>

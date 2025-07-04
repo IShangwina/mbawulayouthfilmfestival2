@@ -3,213 +3,183 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-   <!-- ========== FAVICON IMPLEMENTATION ========== -->
-    <!-- Favicon for various devices and browsers -->
-    <link rel="icon" href="Assets/Favicon/favicon.ico" sizes="any"> <!-- Legacy .ico format -->
-    <link rel="icon" href="Assets/Favicon/favicon-32x32.png" type="image/png" sizes="32x32"> <!-- Standard size -->
-    <link rel="icon" href="Assets/Favicon/favicon-16x16.png" type="image/png" sizes="16x16"> <!-- Smaller size -->
-    <link rel="apple-touch-icon" href="Assets/Favicon/apple-touch-icon.png"> <!-- For iOS devices -->
-    <link rel="manifest" href="Assets/Favicon/site.webmanifest"> <!-- Web app manifest -->
-    <link rel="mask-icon" href="Assets/Favicon/" color="#FF6B00">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="Assets/Favicon/favicon.ico" sizes="any">
+  <link rel="icon" href="Assets/Favicon/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="Assets/Favicon/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" href="Assets/Favicon/apple-touch-icon.png">
+  <link rel="manifest" href="Assets/Favicon/site.webmanifest">
+  <link rel="mask-icon" href="Assets/Favicon/" color="#FF6B00">
 
   <title>Mbawula Films | 30 Years of South Africa Through Film</title>
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
 
-   <!-- ====================
-        NAVIGATION BAR
-  ===================== -->
+  <!-- Navigation -->
   <header id="navbar">
     <div class="nav-left">
-      <!-- INSERT SVG LOGO HERE -->
       <img src="Assets/IMAGES/MBAWULA 2025 LOGO 2.png" alt="Mbawula Logo" class="logo">
       <img src="Assets/IMAGES/MBAWULA LOGO BW.png" alt="Mbawula Logo" class="logo logo-bw">
     </div>
-  
-
     <nav class="nav-links">
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="index.html#about">About</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="films.html">Films</a></li>
         <li><a href="newsletter.html">News</a></li>
-        <li><a href="404.html">Contact</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-
-    <!-- HAMBURGER MENU -->
     <div class="hamburger" id="hamburger">
       <span></span>
       <span></span>
       <span></span>
     </div>
-
-    <!-- MOBILE DROPDOWN NAV -->
     <nav class="mobile-menu" id="mobileMenu">
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="index.html#about">About</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="films.html">Films</a></li>
         <li><a href="newsletter.html">News</a></li>
-        <li><a href="404.html">Contact</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
-  <!-- ==================
-        FILTER BUTTONS
-  ===================== -->
 
-  <!-- ====================
-    FLOATING DATE BOX
-==================== -->
-<div class="floating-date-box">
-  <img src="Assets/IMAGES/MBAWULA 2025 - DATE.png" alt="Festival Date" class="date-img" />
-  <div class="countdown" id="countdown">Loading countdown...</div>
-</div>
-
+  <!-- Floating Date Box -->
+  <div class="floating-date-box">
+    <img src="Assets/IMAGES/MBAWULA 2025 - DATE.png" alt="Festival Date" class="date-img" />
+    <div class="countdown" id="countdown">Loading countdown...</div>
+  </div>
 
   <!-- Hero Section -->
   <section class="film-hero">
+    <img src="Assets/IMAGES/Background/MBAWULA 2024 - No Smoke (Landscape).jpg" alt="Mbawula Logo" class="hero-logo"/>
     <h1>Films</h1>
   </section>
 
   <!-- Film Gallery -->
   <section class="film-gallery">
-    <h2></h2>
-    <div class="film-grid" data-catergory="">
-      <div class="film-card">
-        <img src="Assets/IMAGES/Films/1 THE PEOPLE VERSEUS THE PEOPLE.jpg" alt="Film 1" />
+    <div class="filter-container">
+      <label for="yearFilter">Filter by Year:</label>
+      <select id="yearFilter">
+        <option value="all">All Years</option>
+        <option value="2021">2021</option>
+        <option value="2022">2022</option>
+        <option value="2023">2023</option>
+      </select>
+    </div>
+
+    <div class="film-grid">
+      <!-- 2022 Films -->
+      <div class="film-card" data-category="2022">
+        <img src="Assets/IMAGES/Posters/2022/Film/MBAWULA 2022 (June 16) Indi Poster-01.jpg" alt="Uprise!"/>
+        <h3>Uprise!</h3>
+      </div>
+      <div class="film-card" data-category="2022">
+        <img src="Assets/IMAGES/Posters/2022/Film/MBAWULA 2022 (June 16) Indi Poster-02.jpg" alt="A New Country"/>
+        <h3>A New Country</h3>
+      </div>
+      <div class="film-card" data-category="2022">
+        <img src="Assets/IMAGES/Posters/2022/Film/MBAWULA 2022 (June 16) Indi Poster-03.jpg" alt="My Culture My Music"/>
+        <h3>My Culture My Music</h3>
+      </div>
+      <div class="film-card" data-category="2022">
+        <img src="Assets/IMAGES/Posters/2022/Film/MBAWULA 2022 (June 16) Indi Poster-04.jpg" alt="Liesbet"/>
+        <h3>Liesbet</h3>
+      </div>
+      <div class="film-card" data-category="2022">
+        <img src="Assets/IMAGES/Posters/2022/Film/MBAWULA 2022 (June 16) Indi Poster-05.jpg" alt="Re-Late"/>
+        <h3>Re-Late</h3>
+      </div>
+      <div class="film-card" data-category="2022">
+        <img src="Assets/IMAGES/Posters/2022/Film/MBAWULA 2022 (June 16) Indi Poster-07.jpg" alt="Shaya!"/>
+        <h3>Shaya!</h3>
+      </div>
+      <div class="film-card" data-category="2022">
+        <img src="Assets/IMAGES/Posters/2022/Film/MBAWULA 2022 (June 16) Indi Poster-08.jpg" alt="Salvation"/>
+        <h3>Salvation</h3>
+      </div>
+
+      <!-- 2023 Films -->
+      <div class="film-card" data-category="2023">
+        <img src="Assets/IMAGES/Films/1 THE PEOPLE VERSEUS THE PEOPLE.jpg" alt="The People Versus The People"/>
         <h3>The People Versus The People</h3>
-        <p></p>
       </div>
-
-      <div class="film-card" data-catergory="">
-        <img src="Assets/IMAGES/Films/2 THE PEOPLE VERSEUS PATRIARCHY.jpg" alt="Film 2" />
+      <div class="film-card" data-category="2023">
+        <img src="Assets/IMAGES/Films/2 THE PEOPLE VERSEUS PATRIARCHY.jpg" alt="The People Versus The Patriarchy"/>
         <h3>The People Versus The Patriarchy</h3>
-        <p></p>
-        <div class=""></div>
       </div>
-
-      <div class="film-card" data-catergory="">
-        <img src="Assets/IMAGES/Films/3 RAFIKI.jpg" alt="Film 3" />
+      <div class="film-card" data-category="2023">
+        <img src="Assets/IMAGES/Films/3 RAFIKI.jpg" alt="Rafiki"/>
         <h3>Rafiki</h3>
-        <p></p>
-        <div class=""></div>
       </div>
-
-      <div class="film-card" data-catergory="2023">
-        <img src="Assets/IMAGES/Films/4 BREAKING BARRIERS.jpg" alt="Film 4" />
+      <div class="film-card" data-category="2023">
+        <img src="Assets/IMAGES/Films/4 BREAKING BARRIERS.jpg" alt="Breaking Barriers"/>
         <h3>Breaking Barriers</h3>
-        <p></p>
-        <div class=""></div>
       </div>
-
-      <div class="film-card" data-catergory="2022">
-        <img src="Assets/IMAGES/Films/5 DUSTLANDS.jpg" alt="Film 5" />
+      <div class="film-card" data-category="2023">
+        <img src="Assets/IMAGES/Films/5 DUSTLANDS.jpg" alt="Dustlands"/>
         <h3>Dustlands</h3>
-        <p></p>
-        <div class=""></div>
       </div>
-
-      <div class="film-card" data-catergory="2022">
-        <img src="Assets/IMAGES/Films/6 DORPIE.jpg" alt="Film 6" />
+      <div class="film-card" data-category="2023">
+        <img src="Assets/IMAGES/Films/6 DORPIE.jpg" alt="Dorpie"/>
         <h3>Dorpie</h3>
-        <p></p>
-        <div class=""></div>
       </div>
-
-      <div class="film-card" data-catergory="2022">
-        <img src="Assets/IMAGES/Films/7 MUTANT.jpg" alt="Film 7" />
+      <div class="film-card" data-category="2023">
+        <img src="Assets/IMAGES/Films/7 MUTANT.jpg" alt="Mutant"/>
         <h3>Mutant</h3>
-        <p></p>
-        <div class=""></div>
       </div>
-
-      <div class="film-card" data-catergory="2023">
-        <img src="Assets/IMAGES/Films/8 KEEPING THE HOPE ALIVE.jpg" alt="Film 8" />
+      <div class="film-card" data-category="2023">
+        <img src="Assets/IMAGES/Films/8 KEEPING THE HOPE ALIVE.jpg" alt="Keeping The Hope Alive"/>
         <h3>Keeping The Hope Alive</h3>
-        <p></p>
-        <div class=""></div>
       </div>
-
-      <div class="film-card" data-catergory="2023">
-        <img src="Assets/IMAGES/Films/9 BOTAKI BA LERATO.jpg" alt="Film 9" />
+      <div class="film-card" data-category="2023">
+        <img src="Assets/IMAGES/Films/9 BOTAKI BA LERATO.jpg" alt="Botaki Ba Lerato"/>
         <h3>Botaki Ba Lerato</h3>
-        <p></p>
-        <div class=""></div>
       </div>
-
-      <div class="film-card" data-catergory="2023">
-        <img src="Assets/IMAGES/Films/10 UKUQAWUKA KWECAMAGU.jpg" alt="Film 10" />
+      <div class="film-card" data-category="2023">
+        <img src="Assets/IMAGES/Films/10 UKUQAWUKA KWECAMAGU.jpg" alt="Ukuqawuka Kwecamagu"/>
         <h3>Ukuqawuka Kwecamagu</h3>
-        <p></p>
-        <div class=""></div>
       </div>
-
-      <div class="film-card" data-catergory="2022">
-        <img src="Assets/IMAGES/Films/11 FOUR WALLS.jpg" alt="Film 11" />
+      <div class="film-card" data-category="2023">
+        <img src="Assets/IMAGES/Films/11 FOUR WALLS.jpg" alt="Four Walls"/>
         <h3>Four Walls</h3>
-        <p></p>
-        <div class=""></div>
       </div>
-
-      <div class="film-card" data-catergory="2023">
-        <img src="Assets/IMAGES/Films/12 PLATFONTEIN_ CHANGING THE NARRATIVE.jpg" alt="Film 12" />
+      <div class="film-card" data-category="2023">
+        <img src="Assets/IMAGES/Films/12 PLATFONTEIN_ CHANGING THE NARRATIVE.jpg" alt="Platfontein: Changing The Narrative"/>
         <h3>Platfontein: Changing The Narrative</h3>
-        <p></p>
-        <div class=""></div>
       </div>
-
-      <div class="film-card" data-catergory="2013">
-        <img src="Assets/IMAGES/Films/13 KHUMBA.jpg" alt="Film 13" />
-        <h3>13 Khumba</h3>
-        <p></p>
-        <div class=""></div>
+      <div class="film-card" data-category="2023">
+        <img src="Assets/IMAGES/Films/13 KHUMBA.jpg" alt="Khumba"/>
+        <h3>Khumba</h3>
       </div>
-
-      <div class="film-card" data-catergory="2012">
-        <img src="Assets/IMAGES/Films/14 ZAMBEZIA.jpg" alt="Film 14" />
+      <div class="film-card" data-category="2023">
+        <img src="Assets/IMAGES/Films/14 ZAMBEZIA.jpg" alt="Zambezia"/>
         <h3>Zambezia</h3>
-        <p></p>
-        <div class=""></div>
       </div>
-
-      <div class="film-card" data-catergory="2022">
-        <img src="Assets/IMAGES/Films/15 LOBOLA.jpg" alt="Film 15" />
+      <div class="film-card" data-category="2023">
+        <img src="Assets/IMAGES/Films/15 LOBOLA.jpg" alt="Lobola"/>
         <h3>Lobola</h3>
-        <p></p>
-        <div class=""></div>
       </div>
-
-      <div class="film-card" data-catergory="2023">
-        <img src="Assets/IMAGES/Films/16 ADDICTION.jpg" alt="Film 16" />
+      <div class="film-card" data-category="2023">
+        <img src="Assets/IMAGES/Films/16 ADDICTION.jpg" alt="Addiction"/>
         <h3>Addiction</h3>
-        <p></p>
-        <div class=""></div>
       </div>
-
-      <div class="film-card" data-catergory="2022">
-        <img src="Assets/IMAGES/Films/17 THE RECLAIMERS.jpg" alt="Film 17" />
+      <div class="film-card" data-category="2023">
+        <img src="Assets/IMAGES/Films/17 THE RECLAIMERS.jpg" alt="The Reclaimers"/>
         <h3>The Reclaimers</h3>
-        <p></p>
-        <div class=""></div>
       </div>
-
-      <div class="film-card" data-catergory="2023">
-        <img src="Assets/IMAGES/Films/18 NINE NINE.jpg" alt="Film 18" />
+      <div class="film-card" data-category="2023">
+        <img src="Assets/IMAGES/Films/18 NINE NINE.jpg" alt="Nine Nine"/>
         <h3>Nine Nine</h3>
-        <p>.</p>
-        <div class=""></div>
       </div>
-      <!-- Add more film-card divs freely -->
     </div>
   </section>
-  
-<!-- ====================
-          FOOTER
-  ===================== -->
+
+  <!-- Footer -->
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-left">
