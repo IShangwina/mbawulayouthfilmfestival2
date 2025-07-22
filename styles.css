@@ -525,6 +525,10 @@ body {
   padding: 0 1rem;
 }
 
+.extra-films {
+  display: none;
+}
+
 .film-card {
   background: #fff;
   border-radius: 1rem;
@@ -555,6 +559,22 @@ body {
   color: #666;
   font-size: 0.95rem;
 }
+
+.see-more-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#seeMoreBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ff6b00;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
 
 /* Mobile adjustments: 3 cards per row */
 @media (max-width: 768px) {
@@ -784,6 +804,13 @@ body {
 .card-summary p {
   color: #444;
 }
+
+.program-listing {
+  line-height: 1.5rem;
+  padding-top: 1rem;
+  
+}
+
 
 /* Modal Styling */
 .modal {
