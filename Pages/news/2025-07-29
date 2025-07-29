@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Issue 5 - Queer Focus</title>
+</head>
+    
+      <!-- Favicon -->
+  <link rel="icon" href="/Assets/IMAGES/Favicon/favicon.ico" sizes="any">
+  <link rel="icon" href="/Assets/IMAGES/Favicon/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/Assets/IMAGES/Favicon/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" href="/Assets/IMAGES/Favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/Assets/IMAGES/Favicon/site.webmanifest">
+  <link rel="mask-icon" href="/Assets/IMAGES/Favicon/" color="#FF6B00">
+
+  
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="preload" href="/Assets/Fonts/Montserrat-Regular.ttf" as="font" type="font/ttf" crossorigin>
+</head>
+
+
+  
+
+ <header id="navbar" class="scrolled">
+    <div class="nav-left">
+      <img src="/Assets/IMAGES/MBAWULA LOGO BW.png" alt="Mbawula Logo" class="logo logo-bw">
+    </div>
+    <nav class="nav-links">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="films.html">Films</a></li>
+        <li><a href="newsletter.html">News</a></li>
+        <li><a href="404.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+    <nav class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="films.html">Films</a></li>
+        <li><a href="newsletter.html">News</a></li>
+        <li><a href="404.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<body>
+      
+  <div class="news-container">    
+
+    <div class="news-container">
+      <h1 style="font-size: 5rem; text-align: left;"></h1>
+      <p class="published"><strong>Published:</strong> 29 July 2025</p>
+
+
+  <h2>Queer Focus at Mbawula 2025</h2>
+  <p>This year, the Mbawula Youth Film Festival proudly shines a spotlight on powerful queer narratives, continuing its mission to amplify youth voices through bold and authentic storytelling. In a country and continent where queer visibility is often contested, Mbawula creates a vital platform for conversation, empathy, and celebration through the cinematic lens.</p>
+  <p>The 2025 edition presents a carefully curated lineup of films that unapologetically center LGBTQIA+ stories, identities, and lived experiences—ranging from deeply personal journeys to reflections on systemic struggles and intimate moments of love and resistance.</p>
+  
+  <div class="film-entry">
+    <h3>Onthou Vi Fredo</h3>
+    <p>On June 29, 2023, Alfredo April, a beloved drag artist, queer icon, and respected member of the Malmesbury community, was tragically murdered near his home. Despite this profound loss, his case remains unsolved, stalled by missing evidence and delayed DNA results, leaving justice indefinitely postponed.</p>
+    <p><strong>Onthou Vi Fredo?</strong> delves beyond the case, painting an intimate portrait of Alfredo through the memories of his family, friends, and the Malmesbury community. Affectionately known on stage as ‘Anushka De Patre’, Alfredo’s vibrant spirit endures through his legacy, a beacon of unapologetic self-expression, acceptance, and love.</p>
+    <p>Blending archival footage with heartfelt reflections and tributary drag performances, the documentary preserves Alfredo’s memory while honouring his role as a pillar of the queer community. It is a tribute to Alfredo’s light and an invitation to carry it forward.</p>
+  </div>
+
+  <div class="film-entry">
+    <h3>Mxterminds – An African Agenda</h3>
+    <p>This documentary dives into the stories of queer Africans leading incredible lives. It explores their trials, triumphs, and journeys of pleasure and purpose. From pilots to pole dancers, drag kings to doctors, queer people are shown not as outsiders but at the heart of African culture—living beautifully rich lives that shape the continent’s past, present, and future.</p>
+  </div>
+
+  <div class="film-entry">
+    <h3>Gender Affirming Care In South Africa</h3>
+    <p>A groundbreaking local documentary unpacking the medical, social, and emotional landscape of gender transition and access to healthcare in South Africa.</p>
+  </div>
+
+  <div class="film-entry">
+    <h3>Man Code</h3>
+    <p>Lucas, a computer techie, invites Theo over for a seemingly casual hookup, which quickly takes an odd and unexpected turn. The film is a raw, humorous, and heartfelt look at the awkwardness of queer dating and DL (down-low) culture.</p>
+  </div>
+
+  <div class="film-entry">
+    <h3>Shall We Meet Tonight</h3>
+    <p>A young woman promised in an arranged marriage to an aristocratic benefactor finds herself drawn to a townswoman, igniting a secret love affair that challenges societal and familial expectations.</p>
+  </div>
+
+  <div class="film-entry">
+    <h3>Blind Spots</h3>
+    <p>Following Nandi, a restless graphic designer, and Sinethemba, a mysterious free spirit, this story unfolds in a digital world where their love, vulnerability, and self-discovery intertwine. Their meeting sparks an electric connection and a journey through scars and healing.</p>
+    <p>The Mbawula Youth Film Festival reaffirms its commitment to centering queer voices and reshaping the narrative landscape for generations to come.</p>
+  </div>
+
+  <div class="hashtags">
+    <p>#MbawulaFilmFest #QueerFocus #LGBTQIA</p>
+  </div>
+      <div class="hashtags">
+
+      <div style="margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
+    <span style="background: #eee; padding: 0.5rem 1rem; border-radius: 20px;">#MbawulaFilmFest</span>
+    <span style="background: #eee; padding: 0.5rem 1rem; border-radius: 20px;">#YouthVoices</span>
+    <span style="background: #eee; padding: 0.5rem 1rem; border-radius: 20px;">#FilmmakingMasterClass</span>
+  </div>
+    
+   <a href="/newsletter.html" class="back-link">← Back to Newsletter</a>
+    </div>
+    </div>
+    </div>
+</section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <p>&copy; 2025 Mbawula Youth Film Festival</p>
+      </div>
+      <div class="footer-right">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="mailto:tdtlnhalogang@gmail.com">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="Assets/JS/script.js"></script>
+    
+</body>
+</html>
