@@ -1092,6 +1092,101 @@ body {
   transform: translateY(-2px);
 }
 
+/* ===========================
+        GALLERY SECTION
+============================ */
+
+body {
+  margin: 0;
+  background: var(--mbawula-dark-yellow);
+  font-family: Arial, sans-serif;
+}
+
+/* =========================
+   GALLERY GRID
+========================= */
+
+.gallery-container {
+  padding: 4rem 3rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.gallery img {
+  width: 100%;
+  aspect-ratio: 3 / 4; /* keeps proportions */
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.04);
+  opacity: 0.9;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.modal img {
+  position: relative;
+  max-width: 80vw;
+  max-height: 85vh;
+  object-fit: contain;
+  z-index: 2;
+  animation: zoomIn 0.35s ease;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .gallery-container {
+    padding: 2rem 1.5rem;
+  }
+
+  .modal img {
+    max-width: 92vw;
+    max-height: 80vh;
+  }
+}
+
 
 /* ===========================
         FOOTER SECTION
